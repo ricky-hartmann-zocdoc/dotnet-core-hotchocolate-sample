@@ -21,6 +21,10 @@ namespace GraphQLHCSample
     [ComplexType]
     public class Provider
     {
+        // When using SDL first, the application will fail to start if any field
+        // in the schema is not resolvable to either a property or function.
+        // You can try commenting this out see the following error:
+        // The field `Provider.id` has no resolver. - Type: Provider
         public string Id { get; set; }
     }
     
