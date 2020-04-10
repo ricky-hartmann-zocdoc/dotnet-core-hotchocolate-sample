@@ -1,0 +1,25 @@
+type Location {
+    name: String!
+    availability: [String]
+}
+
+type Review {
+    id: String
+    bedsideRating: Int
+}
+
+type Provider {
+    id: String!
+    name: String!
+    locations: [Location]!
+    location(id: String!): Location
+    reviews(limit: Int): [Review]
+}
+
+type Query {
+    provider(id: String!): Provider!
+}
+
+schema {
+    query: Query
+}
